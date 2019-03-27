@@ -49,12 +49,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script>
       var socket = io();
-      var el = document.getElementById('server-time');
-
-      socket.on('time', function(timeString) {
-        el.innerHTML = 'Server time: ' + timeString;
-      });
-
 
       $('#tete').click(function () {
 		  socket.emit('change', { numero: $(this).data("numero") });
