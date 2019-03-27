@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
+const INDEX = path.join(__dirname, 'index.php');
 
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
@@ -23,8 +23,8 @@ setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
 io.sockets.on('connection', function (socket) {
 
-    socket.on('change', function () {
-		socket.broadcast.emit('changeclass');
+    socket.on('change', function (lenumero) {
+		socket.broadcast.emit('changeclass', lenumero);
     }); 
 	
 });
