@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      #bloc {
+        width: 100px;
+        height: 100px;
+        background:red;
+      }
+
+      #bloc.vert {
+        background:green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p id='server-time'></p>
+    <div id="bloc">LE BLOC</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      var socket = io();
+      var el = document.getElementById('server-time');
+
+      socket.on('time', function(timeString) {
+        el.innerHTML = 'Server time: ' + timeString;
+      });
+
+
+      $('#bloc').click(function () {
+          socket.emit('change');
+      });
+
+      socket.on('changeclass', function() {
+        $( "#bloc" ).addClass( "vert" );
+      });
+
+
+    </script>
+  </body>
+</html>
