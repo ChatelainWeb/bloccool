@@ -63,6 +63,17 @@
       socket.on('changeclass', function(lenumero) {
         /*$( "#bloc" ).addClass( "vert" );*/
 		console.log(lenumero);
+
+	     if ( $("span").find(`[data-numero='${lenumero}']`).hasClass( "r" ) ) {
+	      	$("span").find(`[data-numero='${lenumero}']`).removeClass();			
+		$("span").find(`[data-numero='${lenumero}']`).addClass( "l" );
+	      } else if ( $("span").find(`[data-numero='${lenumero}']`).hasClass( "l" ) ) {
+		$("span").find(`[data-numero='${lenumero}']`).removeClass();			
+		$("span").find(`[data-numero='${lenumero}']`).addClass( "r" );
+	      }
+	      
+	      
+	      
       });
 
 
