@@ -64,14 +64,14 @@
         /*$( "#bloc" ).addClass( "vert" );*/
 		console.log(lenumero);
 	      
-	      console.log($("span").find(`[data-numero='${lenumero}']`));
+	      console.log($("#cdb").find(`[data-numero='${lenumero}']`));
 
-	     if ( $("span").find(`[data-numero='${lenumero}']`).hasClass( "r" ) ) {
-	      	$("span").find(`[data-numero='${lenumero}']`).removeClass();			
-		$("span").find(`[data-numero='${lenumero}']`).addClass( "l" );
-	      } else if ( $("span").find(`[data-numero='${lenumero}']`).hasClass( "l" ) ) {
-		$("span").find(`[data-numero='${lenumero}']`).removeClass();			
-		$("span").find(`[data-numero='${lenumero}']`).addClass( "r" );
+	     if ( $("#cdb").find(`[data-numero='${lenumero}']`).hasClass( "r" ) ) {
+	      	$("#cdb").find(`[data-numero='${lenumero}']`).removeClass();			
+		$("#cdb").find(`[data-numero='${lenumero}']`).addClass( "l" );
+	      } else if ( $("#cdb").find(`[data-numero='${lenumero}']`).hasClass( "l" ) ) {
+		$("#cdb").find(`[data-numero='${lenumero}']`).removeClass();			
+		$("#cdb").find(`[data-numero='${lenumero}']`).addClass( "r" );
 	      }
 	      
 	      
