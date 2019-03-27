@@ -24,7 +24,7 @@ setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 io.sockets.on('connection', function (socket) {
 
     socket.on('change', function (lenumero) {
-		socket.emit('changeclass', lenumero);
+		socket.broadcast.emit('changeclass', lenumero);
     }); 
 	
 });
