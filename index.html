@@ -49,8 +49,15 @@
       var socket = io();
 
       $('#cdb span').click(function () {
+	      if ( $( this ).hasClass( "r" ) ) {
+	      	$( this ).removeClass();			
+		$( this ).addClass( "l" );
+	      } else if ( $( this ).hasClass( "l" ) ) {
+		$( this ).removeClass();			
+		$( this ).addClass( "r" );
+	      }
 	      	console.log($(this).data("numero"));
-		  socket.emit('change', $(this).data("numero"));
+		socket.emit('change', $(this).data("numero"));
       });
 
       socket.on('changeclass', function(lenumero) {
