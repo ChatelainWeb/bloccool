@@ -63,6 +63,8 @@
       socket.on('changeclass', function(lenumero) {
         /*$( "#bloc" ).addClass( "vert" );*/
 		console.log(lenumero);
+	      
+	      console.log($("span").find(`[data-numero='${lenumero}']`));
 
 	     if ( $("span").find(`[data-numero='${lenumero}']`).hasClass( "r" ) ) {
 	      	$("span").find(`[data-numero='${lenumero}']`).removeClass();			
