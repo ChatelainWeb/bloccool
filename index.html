@@ -50,7 +50,7 @@
 
       $('#cdb span').click(function () {
 	      	console.log($(this).data("numero"));
-		  socket.emit('change', { numero: $(this).data("numero") });
+		  socket.emit('change', $(this).data("numero"));
       });
 
       socket.on('changeclass', function(lenumero) {
